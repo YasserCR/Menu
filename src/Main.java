@@ -47,12 +47,18 @@ public class Main {
                 System.out.println("El numero mayor de la secuencia es: "+ Arrays.stream(numerosSecuencia).max().getAsInt());
                 break;
             case "d":
-                System.out.println("Checar con el nachos");
-                System.out.println("---------------------");
+                System.out.println("Ingresa el costo por impresión");
+                double precio = sc.nextDouble();
+                System.out.println("Ingesa la cantidad de impresiones");
+                double impresiones = sc.nextDouble();
+                System.out.println("El total a pagar por las impresones es de $"+impresiones*precio);
                 break;
             case "e":
-                System.out.println("Checar con el nachos");
-                System.out.println("---------------------");
+                System.out.println("Ingresa el monto total a pagar");
+                double total = sc.nextDouble();
+                System.out.println("Ingresa el monto dada por el usuario");
+                double monto = sc.nextDouble();
+                System.out.println("El cambio del cliente es de $"+(monto-total));
                 break;
             default:
                 System.out.println("Por favor, selecciona una opcion valida");
