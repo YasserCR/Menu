@@ -1,0 +1,67 @@
+package frutas;
+public class Frutas {
+    private String  nombre;
+    private float  extencionTerreno;
+    private int  tiempoCosecha;
+    private float  costoProduccion;
+    private float precioDeVenta;
+
+    
+    public Frutas(String nombre, float extencionTerreno, int tiempoCosecha, float costoProduccion, float precioDeVenta) {
+        this.nombre = nombre;
+        this.extencionTerreno = extencionTerreno;
+        this.tiempoCosecha = tiempoCosecha;
+        this.costoProduccion = costoProduccion;
+        this.precioDeVenta = precioDeVenta;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public float getExtencionTerreno() {
+        return extencionTerreno;
+    }
+
+    public int getTiempoCosecha() {
+        return tiempoCosecha;
+    }
+
+    public float getCostoProduccion() {
+        return costoProduccion;
+    }
+
+    public float getPrecioDeVenta() {
+        return precioDeVenta;
+    }
+
+    @Override
+    public String toString() {
+        return "Frutas{" + "nombre=" + nombre + ", extencionTerreno=" + extencionTerreno + ", tiempoCosecha=" + tiempoCosecha + ", costoProduccion=" + costoProduccion + ", precioDeVenta=" + precioDeVenta + '}';
+    }
+
+    public float calcularcostototal(){
+        float costoTotal=costoProduccion*extencionTerreno;
+        return costoTotal;
+    }
+    public float calculaGananciatotal(){
+        float gananciaTotal=calcularcostototal()-(precioDeVenta*tiempoCosecha);
+        return gananciaTotal;
+    }
+    public void agregaOeliminacosecha(int tiempoCosecha){
+        this.tiempoCosecha = tiempoCosecha;
+    }
+    public static void main(String[] args) {
+        Frutas a;
+        a= new Frutas(nombre:"Manzanas" extencionTerreno:1.0, tiempoCosecha:1, costoProduccion:10, precioDeVenta:12);
+       
+        System.out.println(a+"\n"+a.calcularcostototal()+"\n"+a.calculaGananciatotal());
+        
+        a.agregaOeliminacosecha(7);
+        System.out.println(a+"\n"+a.calcularcostototal()+"\n"+a.calculaGananciatotal());
+        
+        a.agregaOeliminacosecha(6);
+        System.out.println(a+"\n"+a.calcularcostototal()+"\n"+a.calculaGananciatotal());
+    }
+
+}
